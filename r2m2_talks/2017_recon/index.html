@@ -54,12 +54,23 @@
                                 // Shows the slide number
                                 slideNumber: true,
 
+                                // Keyboard binding for the chalkboard plugin
+                                keyboard: {
+                                        67: function() { RevealChalkboard.toggleNotesCanvas() }, // toggle notes canvas when 'c' is pressed
+                                        46: function() { RevealChalkboard.clear() }, // clear chalkboard when 'DEL' is pressed
+                                        },
+
+                                // Use red to daw in the chalkboard plugin
+                                chalkboard: { color: [ 'rgba(255,0,0,1)' ] },
+
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
 					{ src: '../reveal.js/plugin/markdown/marked.js' },
 					{ src: '../reveal.js/plugin/markdown/markdown.js' },
 					{ src: '../reveal.js/plugin/notes/notes.js', async: true },
-					{ src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../reveal.js/plugin/zoom-js/zoom.js' },
+					{ src: '../reveal.js/plugin/chalkboard/chalkboard.js' }
                                         ]
                        });
 		</script>
