@@ -22,7 +22,7 @@ https://github.com/guedou/r2m2
 
 # What is r2m2?
 
---
+---
 
 ## Goals
 
@@ -39,7 +39,7 @@ r2m2 is a radare2 plugin that aims to:
 - be architecture independent
   - x86/ARM/MIPS/... logic
 
---
+---
 
 ## Benefits
 
@@ -56,7 +56,7 @@ r2m2 is a radare2 plugin that aims to:
   - r2m2 convert miasm2 IR into radare2 ESIL
     - JUMP addresses, accessed strings, ...
 
---
+---
 
 r2m2 works on Linux, OS X and <u>Docker</u>
 
@@ -66,35 +66,35 @@ https://github.com/guedou/r2m2
 
 # Why ?
 
---
+---
 
 In 2015, I *discovered* a rare CPU architecture
 
---
+---
 
 The firmware update binary was useless
 
---
+---
 
 <!-- .slide: data-background="images/spi.jpg" -->
 <p style="margin-right: -300px;">
 <font color=black>Desolder & dump the SPI flash \\(^^)/</font>
 </p>
 
---
+---
 
 A friend found the following format string:
 
 <font size="6px">PSW:%08x LP:%08x NPC:%08x EXC:%08x EPC:%08x\n</font>
 
---
+---
 
 <!-- .slide: data-background="images/google_mep.png" -->
 <p style="margin-right: -300px;">
 <font color=black>This rare CPU architecture is called Toshiba MeP !</font>
 </p>
 
---
+---
 
 Only `objdump` knew this architecture
 
@@ -117,11 +117,11 @@ Disassembly of section .data:
    67c54:       06 40           sw $0,0x4($sp)
 ```
 
---
+---
 
 I decided to implement it in miasm2
 
---
+---
 
 # Demo #1
 
@@ -538,7 +538,7 @@ The resulting expression is:
 
 ---
 
-# included tools
+# Included tools
 
 The call graph can be easily obtained with
 ```python
@@ -553,7 +553,7 @@ INFO : generate intervals
 [..]
 ```
 
---
+---
 
 The result is basic, yet useful
 
@@ -614,7 +614,7 @@ r2lang.plugin("asm", r2m2_ad_plugin)
 
 Quite easy to use
 ```bash
-$ r2 -i /vagrant/r2bindings-r2m2_ad.py -c 'e asm.arch=r2m2_native' /bin/ls
+$ r2 -i r2bindings-r2m2_ad.py -c 'e asm.arch=r2m2_native' /bin/ls
 [0x00404840]> pd 5
             ;-- entry0:
             0x00404840      31ed           XOR        EBP, EBP
@@ -866,19 +866,7 @@ r2m2$ cat binary |rasm2 -a r2m2 -d -
 ADDIU      A0, A1, 0x2
 ```
 
---
-
-miasm2 MSP430 in r2 with random instructions:
-```bash
-r2m2$ R2M2_ARCH=msp430 r2 -a r2m2 -qc 'woR; pd 5' -
-            0x00000000      07fa           and.w      R10, R7
-            0x00000002      47ad           dadd.b     R13, R7
-            0x00000004      f05e0778       add.b      @R14+, 0x7807(PC)
-            0x00000008      f46d81ed       addc.b     @R13+, 0xED81(R4)
-            0x0000000c      3fdc           bis.w      @R12+, R15
-```
-
---
+---
 
 miasm2 x86-64 on `/bin/ls`:
 ```bash
@@ -906,7 +894,7 @@ Use miasm2 to __automatically__
 - emulate instructions
 - ...
 
---
+---
 
 # How?
 
@@ -923,7 +911,7 @@ if instr.is_subcall():
         analop.type = R_ANAL_OP_TYPE_UCALL
 ```
 
---
+---
 
 A simple MIPS32 output
 
@@ -935,57 +923,21 @@ r2m2$ R2M2_ARCH=mips32b r2 -a r2m2 j_nop.bin -qc 'pd 2'
         `-> 0x00000004      00000000       NOP 
 ```
 
---
-
-A more complex output - r2 vs r2m2
-
-```bash
-r2$ r2 /bin/ls -qc 'pd 12 @0x00404a1c'
-            0x00404a1c      4883f80e       cmp rax, 0xe
-            0x00404a20      4889e5         mov rbp, rsp
-        ,=< 0x00404a23      761b           jbe 0x404a40
-        |   0x00404a25      b800000000     mov eax, 0
-        |   0x00404a2a      4885c0         test rax, rax
-       ,==< 0x00404a2d      7411           je 0x404a40
-       ||   0x00404a2f      5d             pop rbp
-       ||   0x00404a30      bf60e66100     mov edi, loc._edata         ; loc._edata
-       ||   0x00404a35      ffe0           jmp rax
-       ||   0x00404a37      660f1f840000.  nop word [rax + rax]
-       ``-> 0x00404a40      5d             pop rbp
-            0x00404a41      c3             ret
-```
-```bash
-r2m2$ R2M2_ARCH=x86_64 r2 -a r2m2 /bin/ls -qc 'pd 12 @0x00404a1c'
-            0x00404a1c      4883f80e       CMP        RAX, 0xE
-            0x00404a20      4889e5         MOV        RBP, RSP
-        ,=< 0x00404a23      761b           JBE        0x1D
-        |   0x00404a25      b800000000     MOV        EAX, 0x0
-        |   0x00404a2a      4885c0         TEST       RAX, RAX
-       ,==< 0x00404a2d      7411           JZ         0x13
-       ||   0x00404a2f      5d             POP        RBP
-       ||   0x00404a30      bf60e66100     MOV        EDI, loc._edata
-       ||   0x00404a35      ffe0           JMP        RAX
-       ||   0x00404a37      660f1f840000.  NOP        WORD PTR [RAX*0x2]
-       ``-> 0x00404a40      5d             POP        RBP
-            0x00404a41      c3             RET       
-```
-
---
+---
 
 Step#2 - convert miasm2 expression to radare2 ESIL
 
 - both achieve the same goal: express instructions semantics
 
-- simple automatic conversions are possible
+- automatic conversions are possible
 ```
 m2 expr -> ExprAff(ExprId("R0", 32), ExprInt(0x2807, 32))
 r2 esil -> 0x2807,r0,=
 ```
 
 - need to dynamically define the radare2 registers profile
-  - done thanks to CFFI and miasm2
 
---
+---
 
 A simple MIPS32 output
 
@@ -995,26 +947,6 @@ r2m2$ R2M2_ARCH=mips32b rasm2 -a r2m2 'j 0x4; nop' -B > j_nop.bin
 r2m2$ R2M2_ARCH=mips32b r2 -a r2m2 j_nop.bin -qc 'e asm.emu=true; pd 2'
         ,=< 0x00000000      08000001       J          0x4     ; pc=0x4 
         `-> 0x00000004      00000000       NOP
-```
-
---
-
-A more complex output
-
-```bash
-R2M2_ARCH=x86_64 r2 -a r2m2 /bin/ls -qc 'e asm.emu=true; pd 12 @0x00404a1c'
-     0x00404a1c   4883f80e       CMP    RAX, 0xE        ; zf=0x0 
-     0x00404a20   4889e5         MOV    RBP, RSP        ; rbp=0x0 
- ,=< 0x00404a23   761b           JBE    0x1D            ; unlikely
- |   0x00404a25   b800000000     MOV    EAX, 0x0        ; eax=0x0 
- |   0x00404a2a   4885c0         TEST   RAX, RAX        ; zf=0x1 -> 0x2464c00
-,==< 0x00404a2d   7411           JZ     0x13            ; unlikely
-||   0x00404a2f   5d             POP    RBP             ; rsp=0x8 ; rbp=0x0 
-||   0x00404a30   bf60e66100     MOV    EDI, loc._edata ; edi=0x61e660 -> 0x68732e00 loc._edata
-||   0x00404a35   ffe0           JMP    RAX             ; rip=0x0 
-||   0x00404a37   660f1f840000.  NOP    WORD PTR [RAX*0x2]
-``-> 0x00404a40   5d             POP    RBP             ; rsp=0x10 -> 0x3e0000; rbp=0x3e0002 -> 0xffffff00
-     0x00404a41   c3             RET                    ; rsp=0x18 -> 0x404900
 ```
 
 ---
@@ -1039,7 +971,7 @@ R2M2_ARCH=x86_64 r2 -a r2m2 /bin/ls -qc 'e asm.emu=true; pd 12 @0x00404a1c'
 
 - calling conventions: specify them dynamically 
 
---
+---
 
 <!-- .slide: data-background="images/r2m2-mep-cc.png" -->
 <p style="margin-right: -300px;">
@@ -1061,7 +993,6 @@ $ docker run --rm -it -e 'R2M2_ARCH=arml' \
 ```
 
 - too good to be true?
-  - could be, yet r2m2 is better than nothing
 
 ---
 
