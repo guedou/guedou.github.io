@@ -538,7 +538,9 @@ The resulting expression is:
 
 ---
 
-<!-- .slide: data-background="images/mister.bin.svg" -->
+# included tools
+
+The call graph can be easily obtained with
 ```python
 miasm2$ python example/disasm/full.py
 INFO : Load binary
@@ -550,6 +552,12 @@ INFO : generate graph file
 INFO : generate intervals
 [..]
 ```
+
+--
+
+The result is basic, yet useful
+
+<img src="images/mister.bin.png" style="border:0; object-fit: cover; width:800px;"/>
 
 ---
 
@@ -1011,7 +1019,7 @@ R2M2_ARCH=x86_64 r2 -a r2m2 /bin/ls -qc 'e asm.emu=true; pd 12 @0x00404a1c'
 
 ---
 
-Demo #3
+# Demo #3
 
 ---
 
@@ -1047,8 +1055,8 @@ Demo #3
 
 - r2m2 is more than *"PoC that works on my laptop"*
 ```bash
-$ docker run --rm -it -e 'R2M2_ARCH=arml' guedou/r2m2\
-    "rasm2 -a r2m2 'add r0, r1, r2'"
+$ docker run --rm -it -e 'R2M2_ARCH=arml' \
+      guedou/r2m2 "rasm2 -a r2m2 'add r0, r1, r2'"
 020081e0
 ```
 
