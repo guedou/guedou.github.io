@@ -72,7 +72,7 @@ In 2015, I *discovered* a rare CPU architecture
 
 ---
 
-The firmware update binary was useless
+The firmware update binary did not include any clue
 
 ---
 
@@ -96,7 +96,7 @@ A friend found the following format string:
 
 ---
 
-Only `objdump` knew this architecture
+Only `binutils` knew this architecture
 
 ```
 binutils$ objdump -m mep -b binary -D mister.bin
@@ -455,7 +455,7 @@ Result: RSI_init 0x2007
 
 2. opcodes in *miasm2/arch/ARCH/arch.py*
 
-3. semantic in *miasm2/arch/ARCH/sem.py*
+3. semantics in *miasm2/arch/ARCH/sem.py*
 
 ---
 
@@ -772,7 +772,7 @@ RAnalOp.type: 0x2807
 ```
 
 <br>
-See r2m2 source code for a whole example !
+See r2m2 source code for a complete example !
 
 ---
 
