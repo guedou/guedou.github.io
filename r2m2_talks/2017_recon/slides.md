@@ -127,12 +127,18 @@ I decided to implement it in miasm2
 
 ---
 
+Get slides & examples at
+
+https://guedou.github.io/
+
+---
+
 # miasm 101
 
 ---
 
 <!-- .slide: style="text-align: left;"> -->  
-# What is miasm?
+## What is miasm?
 
 Python-based reverse engineering framework with many awesome features:
 
@@ -147,7 +153,7 @@ for code, examples and demos
 
 ---
 
-# Assembling
+## Assembling
 
 ```python
 # Create a x86 miasm machine
@@ -168,7 +174,7 @@ for code, examples and demos
 
 ---
 
-# Disassembling
+## Disassembling
 
 ```python
 # Disassemble all variants
@@ -181,7 +187,7 @@ for code, examples and demos
 
 ---
 
-## miasm intermediate language
+## intermediate language
 
 ```python
 # Disassemble a simple ARM instruction
@@ -203,7 +209,7 @@ for code, examples and demos
 
 ---
 
-# Symbolic execution
+## Symbolic execution
 
 ```python
 # Add the instruction to the current block
@@ -260,7 +266,7 @@ R2 0x2807  # R0 + R8 = 0 + 0x2807
 
 ---
 
-# Emulation / JIT
+## Emulation / JIT
 
 Let's build a simple binary to emulate
 
@@ -335,7 +341,7 @@ add(): 0x2807
 
 ---
 
-# gdb server
+## gdb server
 
 ```bash
 $ python sandbox_recon.py ./add -g 2807
@@ -437,7 +443,7 @@ Result: RSI_init 0x2007
 
 ---
 
-## Adding a new architecture to miasm
+# Adding a new architecture
 
 ---
 
@@ -538,11 +544,11 @@ The resulting expression is:
 
 ---
 
-# Included tools
+## Included tools
 
 The call graph can be easily obtained with
 ```python
-miasm2$ python example/disasm/full.py
+miasm2$ python example/disasm/full.py mister.bin
 INFO : Load binary
 INFO : ok
 INFO : import machine...
@@ -639,7 +645,7 @@ More steps must be taken:
 
 2. access r2 structures from Python
 
-3. build a r2 plugin
+3. build an r2 plugin
 
 <br>
 The [CFFI](https://cffi.readthedocs.io/en/latest/overview.html#embedding) Python module produces a dynamic library!
@@ -834,19 +840,19 @@ struct r_lib_struct_t radare_plugin = {
 
 ---
 
-# What's inside r2m2?
+## What's inside r2m2?
 
 - uses everything described so far to bring miasm2 to radare2!
 - keeps most of the smart logics in miasm2
   - r2m2 aims to be architecture independent
-  - uses the R2M2_ARCH env variable to specify the arch
+  - uses the **R2M2_ARCH** env variable to specify the arch
 - provides two r2 plugins:
   - ad: <u>a</u>ssembly & <u>d</u>isassembly
   - Ae: <u>A</u>nalysis & <u>e</u>sil
 
 <br>
 ```bash
-r2m2$ rasm2 -L |grep r2m2
+r2m2$ rasm2 -L | grep r2m2
 adAe  32         r2m2        LGPL3   miasm2 backend
 ```
 
@@ -862,7 +868,7 @@ MIPS32 assembly/disassembly with rasm2:
 ```bash
 r2m2$ export R2M2_ARCH=mips32l
 r2m2$ rasm2 -a r2m2 'addiu a0, a1, 2' > binary
-r2m2$ cat binary |rasm2 -a r2m2 -d -
+r2m2$ cat binary | rasm2 -a r2m2 -d -
 ADDIU      A0, A1, 0x2
 ```
 
@@ -896,7 +902,7 @@ Use miasm2 to __automatically__
 
 ---
 
-# How?
+## How?
 
 Step#1 - use miasm2 expressions and internal methods
   - `breakflow()`, `dstflow()`, `is_subcall()`
@@ -905,10 +911,10 @@ Step#1 - use miasm2 expressions and internal methods
 # r2m2 incomplete example
 if instr.is_subcall():
     if isinstance(instr.arg, ExprInt):
-        analop.type = R_ANAL_OP_TYPE_CALL
+        analop.type = R_ANAL_OP_TYPE_CALL  # r2 type
         analop.jump = address + int(instr.arg)
     else:
-        analop.type = R_ANAL_OP_TYPE_UCALL
+        analop.type = R_ANAL_OP_TYPE_UCALL  # r2 type
 ```
 
 ---
@@ -942,8 +948,6 @@ r2 esil -> 0x2807,r0,=
 A simple MIPS32 output
 
 ```bash
-r2m2$ R2M2_ARCH=mips32b rasm2 -a r2m2 'j 0x4; nop' -B > j_nop.bin
-
 r2m2$ R2M2_ARCH=mips32b r2 -a r2m2 j_nop.bin -qc 'e asm.emu=true; pd 2'
         ,=< 0x00000000      08000001       J          0x4     ; pc=0x4 
         `-> 0x00000004      00000000       NOP
@@ -957,19 +961,12 @@ r2m2$ R2M2_ARCH=mips32b r2 -a r2m2 j_nop.bin -qc 'e asm.emu=true; pd 2'
 
 ## r2m2 roadmap
 
-- redesign r2m2 as regular Python module
- - ease code reuse (for Python or r2pipe plugins)
- - ease unit & regression tests
-
 - allow user defined Python module
  - specify r2 instruction types and behaviors
 
 - add r2m2 to r2pm
 
-- experiment with another RE framework
-  - metasm, medusa, bap, ...
-
-- calling conventions: specify them dynamically 
+- define calling conventions dynamically 
 
 ---
 
@@ -980,7 +977,7 @@ r2m2$ R2M2_ARCH=mips32b r2 -a r2m2 j_nop.bin -qc 'e asm.emu=true; pd 2'
 
 ---
 
-# Concluding remarks
+## Concluding remarks
 
 - miasm2 and radare2 are powerful tools
   - combining them turned out to be efficient
