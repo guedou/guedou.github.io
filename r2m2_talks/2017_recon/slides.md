@@ -119,7 +119,7 @@ Disassembly of section .data:
 
 ---
 
-I decided to implement it in miasm2
+I decided to implement it in miasm2 !
 
 ---
 
@@ -685,7 +685,7 @@ import cffi
 ffi = cffi.FFI()
 
 # Declare the function that will be exported
-ffi.embedding_api("".join(open("test_cffi.h").readlines()))
+ffi.embedding_api("".join(open("test_cffi.h")))
 
 # /!\ the last part of the code is on the next slide /!\ #
 ```
