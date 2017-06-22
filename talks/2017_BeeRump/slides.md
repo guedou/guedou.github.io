@@ -168,7 +168,7 @@ $ afl-fuzz -i testcases/ -o findings/ -Q -- ./test_binary
 
 ---
 
-# QEMU & cross fuzzing
+## QEMU & cross fuzzing
 
 - fuzz any QEMU architecture on x86
 - uses a lot of RAM =/
@@ -185,6 +185,14 @@ $ afl-fuzz -i testcases/ -o findings/ -Q -m 4096 -- ./test_arm_binary
 ```
 
 ~1600 exec/s
+
+--
+
+## On a Raspberry Pi 3 - Model B
+
+- dumb: ~500 exec/s
+- llvm: ~1000 exec/s
+- AFL_LOOP: ~4000 exec/s
 
 --
 
@@ -341,10 +349,10 @@ GCC jitter: ~2500 exec/s
   - equally good / bad at findings generic / specific solutions
 
 - AFL won't find
-```
-long magic = strtoul(&data[4], 0, 10);
+```C
+unsigned ong magic = strtoul(&data[4], 0, 10);
 if (magic == 2206)
-  printf("Fail ...\n");
+        printf("Fail ...\n");
 ```
 
 - the plan:

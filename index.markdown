@@ -1,8 +1,9 @@
 ---
 layout: page
-title:  List of r2m2 talks
+title:  List of talks
 ---
 
+- [2017 BeeRumP](talks/2017_BeeRump) - [PDF](talks/2017_BeeRump/slides.pdf), [Markdown](https://github.com/guedou/guedou.github.io/blob/master/talks/2017_BeeRump/slides.md)
 - [2017 REcon](r2m2_talks/2017_recon) - [PDF](r2m2_talks/2017_recon/slides.pdf), [Markdown](https://github.com/guedou/guedou.github.io/blob/master/r2m2_talks/2017_recon/slides.md)
 - [2016 GreHack](r2m2_talks/2016_grehack) - [PDF](r2m2_talks/2016_grehack/slides.pdf), [Markdown](https://github.com/guedou/guedou.github.io/blob/master/r2m2_talks/2016_grehack/slides.md)
 - [2016 r2con](r2m2_talks/2016_r2con) - [PDF](r2m2_talks/2016_r2con/slides.pdf), [Markdown](https://github.com/guedou/guedou.github.io/blob/master/r2m2_talks/2016_r2con/slides.md), [video](https://youtu.be/YLEfGj5xyDw)
