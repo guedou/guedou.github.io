@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>miasm & AFL - BeeRumP 2017</title>
+
+		<link rel="stylesheet" href="../../r2m2_talks/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../../r2m2_talks/reveal.js/css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../r2m2_talks/reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi) ? '../../r2m2_talks/reveal.js/css/print/pdf.css' : '../../r2m2_talksreveal.js/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+                        <div class="slides">
+<section data-markdown="slides.md"
+         data-separator="^\n---\n$"
+         data-separator-vertical="^\n--\n$"
+         data-charset="iso-8859-15">
+</section>
+			</div>
+               </div>
+
+		<script src="../../r2m2_talks/reveal.js/lib/js/head.min.js"></script>
+		<script src="../../r2m2_talks/reveal.js/js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+                        Reveal.initialize({
+
+                                //width: 1200,
+                                //height: 900,
+                                width: 1024,
+                                height: 768,
+                                //width: 1024*0.88,
+                                //height: 768*0.88,
+                                //height: "100%",
+                                margin: 0.05,
+
+                                // Push each slide change to the browser history
+                                history: true,
+
+                                // Shows the slide number
+                                slideNumber: true,
+
+                                // Keyboard binding for the chalkboard plugin
+                                keyboard: {
+                                        67: function() { RevealChalkboard.toggleNotesCanvas() }, // toggle notes canvas when 'c' is pressed
+                                        46: function() { RevealChalkboard.clear() }, // clear chalkboard when 'DEL' is pressed
+                                        },
+
+                                // Use red to daw in the chalkboard plugin
+                                chalkboard: { color: [ 'rgba(255,0,0,1)' ] },
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../r2m2_talks/reveal.js/plugin/markdown/marked.js' },
+					{ src: '../../r2m2_talks/reveal.js/plugin/markdown/markdown.js' },
+					{ src: '../../r2m2_talks/reveal.js/plugin/notes/notes.js', async: true },
+					{ src: '../../r2m2_talks/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../r2m2_talks/reveal.js/plugin/zoom-js/zoom.js' },
+					{ src: '../../r2m2_talks/reveal.js/plugin/chalkboard/chalkboard.js' }
+                                        ]
+                       });
+		</script>
+	</body>
+</html>
