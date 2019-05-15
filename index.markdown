@@ -3,6 +3,7 @@ layout: page
 title:  List of talks
 ---
 
+- [2018 blackhat USA](https://docs.google.com/presentation/d/13OJNOb2IMwp79SDrbxSLF3i7StTgWLdD7QlYpic39r8/edit) - [PDF](talks/2018_BHUSA/slides.pdf)
 - [2017 BalCCon2k17](talks/2017_BalCCon2k17/Scapy in 0x30 minutes.slides.html) - [Notebook](https://github.com/guedou/guedou.github.io/blob/master/talks/2017_BalCCon2k17/Scapy in 0x30 minutes.ipynb)
 - [2017 BeeRumP](talks/2017_BeeRump) - [PDF](talks/2017_BeeRump/slides.pdf), [Markdown](https://github.com/guedou/guedou.github.io/blob/master/talks/2017_BeeRump/slides.md)
 - [2017 REcon](r2m2_talks/2017_recon) - [PDF](r2m2_talks/2017_recon/slides.pdf), [Markdown](https://github.com/guedou/guedou.github.io/blob/master/r2m2_talks/2017_recon/slides.md)
