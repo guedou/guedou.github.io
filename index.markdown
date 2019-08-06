@@ -5,6 +5,7 @@ title:  List of talks
 
 # 2019
 
+- [Scapy - blackhat USA](talks/2019_BHUSA/Scapy.slides.html) - [Notebook](https://github.com/guedou/guedou.github.io/blob/master/talks/2019_BHUSA/Scapy.ipynb)
 - [Implementing a New CPU Architecturefor Ghidra - BeeRumP](https://docs.google.com/presentation/d/1b955DV2ii-Dgv6YR4kUrJtjGugEqXD3FffTHRfvVSYo/edit) - [PDF](talks/2019_BeeRump/slides.pdf)
 
 # 2018
