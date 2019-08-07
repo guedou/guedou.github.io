@@ -16023,7 +16023,7 @@ Received 1 packets, got 1 answers, remaining 0 packets
 <div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sr1</span><span class="p">(</span><span class="n">IPv6</span><span class="p">()</span><span class="o">/</span><span class="n">ICMPv6ND_RS</span><span class="p">())</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sr1</span><span class="p">(</span><span class="n">IPv6</span><span class="p">()</span> <span class="o">/</span> <span class="n">ICMPv6ND_RS</span><span class="p">())</span>
 </pre></div>
 
     </div>
@@ -16081,7 +16081,7 @@ Received 2 packets, got 1 answers, remaining 0 packets
 <div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">,</span><span class="n">u</span> <span class="o">=</span> <span class="n">sr</span><span class="p">(</span><span class="n">IPv6</span><span class="p">(</span><span class="n">dst</span><span class="o">=</span><span class="s2">&quot;ff02::1&quot;</span><span class="p">)</span><span class="o">/</span><span class="n">ICMPv6EchoRequest</span><span class="p">(),</span> <span class="n">multi</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">,</span><span class="n">u</span> <span class="o">=</span> <span class="n">sr</span><span class="p">(</span><span class="n">IPv6</span><span class="p">(</span><span class="n">dst</span><span class="o">=</span><span class="s2">&quot;ff02::1&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="n">ICMPv6EchoRequest</span><span class="p">(),</span> <span class="n">multi</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">a</span><span class="o">.</span><span class="n">make_table</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">IPv6</span><span class="p">]</span><span class="o">.</span><span class="n">dst</span><span class="p">,</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">IPv6</span><span class="p">]</span><span class="o">.</span><span class="n">src</span><span class="p">,</span> <span class="n">in6_addrtovendor</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">IPv6</span><span class="p">]</span><span class="o">.</span><span class="n">src</span><span class="p">)))</span>
 </pre></div>
 
