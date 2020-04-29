@@ -5,7 +5,7 @@ title:  List of talks
 
 # 2019
 
-- [Scapy - blackhat USA](talks/2019_BHUSA/Scapy.slides.html) - [Notebook](https://github.com/guedou/guedou.github.io/blob/master/talks/2019_BHUSA/Scapy.ipynb)
+- [Scapy Tutorial - BHUSA Arsenal](talks/2019_BHUSA/Scapy.slides.html) - [Notebook](https://github.com/guedou/guedou.github.io/blob/master/talks/2019_BHUSA/Scapy.ipynb)
 - [Implementing a New CPU Architecture for Ghidra - BeeRumP](https://docs.google.com/presentation/d/1b955DV2ii-Dgv6YR4kUrJtjGugEqXD3FffTHRfvVSYo/edit) - [PDF](talks/2019_BeeRump/slides.pdf)
 
 # 2018
@@ -21,6 +21,7 @@ title:  List of talks
 - [r2m2 ❱ radare2 + miasm2 = ♥ - REcon](r2m2_talks/2017_recon) - [PDF](r2m2_talks/2017_recon/slides.pdf), [Markdown](https://github.com/guedou/guedou.github.io/blob/master/r2m2_talks/2017_recon/slides.md)
 
 # 2016
+
 - [radare2 + miasm2 = ♥ - GreHack Rumps](r2m2_talks/2016_grehack) - [PDF](r2m2_talks/2016_grehack/slides.pdf), [Markdown](https://github.com/guedou/guedou.github.io/blob/master/r2m2_talks/2016_grehack/slides.md)
 - [radare2 + miasm2 = ♥ - r2con](r2m2_talks/2016_r2con) - [PDF](r2m2_talks/2016_r2con/slides.pdf), [Markdown](https://github.com/guedou/guedou.github.io/blob/master/r2m2_talks/2016_r2con/slides.md), [video](https://youtu.be/YLEfGj5xyDw)
 - [radare2 + miasm2 = love ♥ - SSTIC Rumps](r2m2_talks/2016_sstic) - [PDF](r2m2_talks/2016_sstic/slides.pdf), [Markdown](https://github.com/guedou/guedou.github.io/blob/master/r2m2_talks/2016_sstic/slides.md), [video (in French)](http://static.sstic.org/rumps2016/SSTIC_2016-06-02_P12_RUMPS_08.mp4)
