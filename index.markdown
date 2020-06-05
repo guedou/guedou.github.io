@@ -5,7 +5,7 @@ title:  List of talks
 
 # 2020
 
-- [First Steps with libsla.a - SSTIC Rumps](https://docs.google.com/presentation/d/1783HQ6ONsvwIX6B_Uk-CS__9Pp2ZI0d2oKYZ6j8dKoY/edit?usp=sharing) - [PDF](talks/2020_sstic/slides.pdf)
+- [First Steps with Ghidra libsla.a - SSTIC Rumps](https://docs.google.com/presentation/d/1783HQ6ONsvwIX6B_Uk-CS__9Pp2ZI0d2oKYZ6j8dKoY/edit?usp=sharing) - [PDF](talks/2020_sstic/slides.pdf)
 
 
 # 2019
