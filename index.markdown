@@ -3,6 +3,16 @@ layout: page
 title:  List of talks
 ---
 
+# 2022
+
+- [When eBPF meets TLS! - CanSecWest 2022](https://docs.google.com/presentation/d/1xiG2efT-ud8kpWLH4i-E11XrlzFUtYYwdO49zurgPew/) - [PDF](talks/2022_cansecwest/slides.pdf)
+
+
+# 2021
+
+- [Scapy Turned 18. Boy They Grow Up Fast, Don’t They - SharkFest'21 Keynote](https://docs.google.com/presentation/d/1OWMumgOdQsoqkT0Bi8mqtqrb4WtM1n83tPcQV4eTdlw) - [PDF](talks/2021_sharkfest/slides.pdf), [video](https://www.youtube.com/watch?v=krZ3fOCTlfs)
+
+
 # 2020
 
 - [First Steps with Ghidra libsla.a - SSTIC Rumps](https://docs.google.com/presentation/d/1783HQ6ONsvwIX6B_Uk-CS__9Pp2ZI0d2oKYZ6j8dKoY/edit?usp=sharing) - [PDF](talks/2020_sstic/slides.pdf)
