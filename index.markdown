@@ -5,6 +5,7 @@ title:  List of publications and talks
 
 ## 2023
 
+- [Editor-in-Chief of MISC magazine](https://connect.ed-diamond.com/auteur/valadon-guillaume)
 - [peetch: an eBPF based Networking Tool - Black Hat Europe Arsenal](https://docs.google.com/presentation/d/13AorsXye78nJyYzQOYiURHe75KB-RtT6HpPcE8WNEZs/edit#slide=id.g12356d7aaed_0_0)
 - [Exploring OpenSSL Engines to Smash Cryptography - SSTIC](https://www.sstic.org/2023/presentation/exploring_openssl_engines_to_smash_cryptography/)
 - [Happy Birthday Scapy <3 - SSTIC Rumps](https://static.sstic.org/rumps2023/SSTIC_2023-06-08_P12_RUMPS_19.mp4)
