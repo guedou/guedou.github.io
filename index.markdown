@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  List of publications and talks
+title:  List of Security Related Publications and Presentations
 ---
 
 ## 2024
