@@ -3,6 +3,10 @@ layout: page
 title:  List of publications and talks
 ---
 
+## 2024
+
+- [Scapy a 21 ans ! - MISC133](https://connect.ed-diamond.com/misc/misc-133/scapy-a-21-ans)
+
 ## 2023
 
 - [Editor-in-Chief of MISC magazine](https://connect.ed-diamond.com/auteur/valadon-guillaume)
@@ -56,6 +60,31 @@ title:  List of publications and talks
 
 - [Plus dur, meilleur, plus fort avec Scapy ! - MISC HS11](https://connect.ed-diamond.com/MISC/mischs-011/plus-dur-meilleur-plus-fort-avec-scapy)
 
+## 2014
+
+- [Detecting BGP Hijacks in 2014 - PacSec & NSC](https://nosuchcon.org/talks/2014/D3_04_Guillaume_Valadon_Nicolas_Vivet_detecting_BGP_hijacks.pdf)
+
+## 2013
+
+- [French Internet Resilience Observatory - RIPE67](https://ripe67.ripe.net/presentations/106-presentation.20131010.pdf)
+- [Observatoire de la résilience de l'Internet français - SSTIC](https://www.sstic.org/2013/presentation/2013_short_observatoire_valadon/)
+- Observatoire de la résilience de l'Internet français - FRnOG 20
+
+## 2012
+
+- [Influence des bonnes pratiques sur les incidents BGP - SSTIC 2012](https://www.sstic.org/2012/presentation/influence_des_bonnes_pratiques_sur_les_incidents_bgp/)
+
+## 2011
+
+- [Architecture DNS sécurisée - SSTIC](https://www.sstic.org/2011/presentation/architecture_dns_scurise/)
+
+## 2010
+
+- [Quelques éléments en matière de sécurité des cartes réseau - SSTIC](https://www.sstic.org/2010/presentation/Peut_on_faire_confiance_aux_cartes_reseau/)
+- [Can you still trust your network card? - CanSecWest](https://www.ssi.gouv.fr/uploads/IMG/pdf/csw-trustnetworkcard.pdf)
+
 ## 2009
 
-- [https://connect.ed-diamond.com/MISC/misc-041/tour-d-horizon-du-wi-fi-a-paris - MISC41](https://connect.ed-diamond.com/MISC/misc-041/tour-d-horizon-du-wi-fi-a-paris)
+- [Tour d'horizon du Wi-Fi à Paris- MISC41](https://connect.ed-diamond.com/MISC/misc-041/tour-d-horizon-du-wi-fi-a-paris)
+
+
