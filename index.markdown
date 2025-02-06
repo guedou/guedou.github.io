@@ -3,6 +3,10 @@ layout: page
 title:  List of Security Related Publications and Presentations
 ---
 
+## 2025
+
+- [Scapy - Implementing Protocols](talks/2025_Scapy_Implementing_Protocols/slides.pdf) - [Markdown](talks/2025_Scapy_Implementing_Protocols/slides.md)
+
 ## 2024
 
 - [Scapy a 21 ans ! - MISC133](https://connect.ed-diamond.com/misc/misc-133/scapy-a-21-ans)
