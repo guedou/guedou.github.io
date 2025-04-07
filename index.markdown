@@ -5,6 +5,8 @@ title:  List of Security Related Publications and Presentations
 
 ## 2025
 
+- [Fresh Secrets From The Docks - Lessons Learnt From Analysing 15 Million Public DockerHub Images - KubeCon Europe 2025](talks/2025_KubeConEU/slides.pdf)
+- [Secret Detection & Responsible Disclosure - JSSI 2025](talks/2025_JSSI/slides.pdf)
 - [Scapy - Implementing Protocols](talks/2025_Scapy_Implementing_Protocols/slides.pdf) - [Markdown](talks/2025_Scapy_Implementing_Protocols/slides.md)
 
 ## 2024
