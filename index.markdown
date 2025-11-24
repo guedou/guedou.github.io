@@ -5,6 +5,9 @@ title:  List of Security Related Publications and Presentations
 
 ## 2025
 
+- [All You Can Leak - Real Tales of Publicly Leaked Kubernetes Secrets - Black Alps](talks/2025_BlackAlps/All You can Leak - Kubernetes.pdf)
+- [Secrets At Sea - Hunting Exposed Code & Container Registries - Pass the SALT 2025](talks/2025_Pass-the-SALT/PTS 2025 - Secrets at Sea.pdf)
+- [Laravel APP_KEY - From Public Leak to RCE - SSTIC Rumps](talks/2025_sstic/Laravel APP_KEY.pdf)
 - [Fresh Secrets From The Docks - Lessons Learnt From Analysing 15 Million Public DockerHub Images - KubeCon Europe 2025](talks/2025_KubeConEU/slides.pdf)
 - [Secret Detection & Responsible Disclosure - JSSI 2025](talks/2025_JSSI/slides.pdf)
 - [Scapy - Implementing Protocols](talks/2025_Scapy_Implementing_Protocols/slides.pdf) - [Markdown](talks/2025_Scapy_Implementing_Protocols/slides.md)
