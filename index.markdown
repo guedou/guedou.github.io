@@ -3,6 +3,10 @@ layout: page
 title:  List of Security Related Publications and Presentations
 ---
 
+## 2026
+
+- [Private Key Leaks in the Wild - Insights from Certificate Transparency - Real World Crypto](talks/2026_RWC/Private Key Leaks.pdf)
+
 ## 2025
 
 - [All You Can Leak - Real Tales of Publicly Leaked Kubernetes Secrets - Black Alps](talks/2025_BlackAlps/All You can Leak - Kubernetes.pdf)
